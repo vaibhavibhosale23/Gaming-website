@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <title>Tic Tac Toe</title>
+  <link rel="icon" type="image/png" href="C:/Users/Vaibhavi/OneDrive/Pictures/Study/Web development/CSS all notes and lectures/game.png" />
+ <style>
+    body {
+        background: url(https://static.vecteezy.com/system/resources/previews/004/532/221/original/tic-tac-toe-seamless-background-on-dark-blue-illustration-vector.jpg);
+      background-size: cover;
+      font-family: 'Bungee','Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 50px;
+      -webkit-text-stroke: 1px rgb(0, 0, 0);text-stroke: 1px rgb(0, 0, 0);
+      margin-bottom: 50px;
+      color: #fff;
+      text-shadow: 0 0 10px #6b656b;
+      font-family: 'Bungee','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+    }
+
+    #board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 10px;
+    }
+
+    .cell {
+      width: 100px;
+      height: 100px;
+      border: 2px solid transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5em;
+      cursor: pointer;
+      transition: 0.3s;
+      background-color: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 10px #000;
+      user-select: none;
+    }
+
+    .cell:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cell.X {
+      color: #ff00ff;
+      text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    }
+
+    .cell.O {
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+    }
+
+    #status {
+      margin: 20px;
+      font-size: 1.2em;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      background-color: #ff00ff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    }
+
+    button:hover {
+      background-color: #cc00cc;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>Tic Tac Toe</h1>
+  <div id="board"></div>
+  <div id="status">Player X's Turn</div>
+  <button onclick="restartGame()">Restart</button>
+
+  <script>
+    const board = document.getElementById("board");
+    const status = document.getElementById("status");
+    let currentPlayer = "X";
+    let gameActive = true;
+    let cells = [];
+
+    function createBoard() {
+      board.innerHTML = "";
+      cells = [];
+      gameActive = true;
+      status.textContent = `Player ${currentPlayer}'s Turn`;
+
+      for (let i = 0; i < 9; i++) {
+        const cell = document.createElement("div");
+        cell.classList.add("cell");
+        cell.dataset.index = i;
+        cell.addEventListener("click", handleClick);
+        board.appendChild(cell);
+        cells.push(cell);
+      }
+    }
+
+    function handleClick(e) {
+      const cell = e.target;
+      const index = cell.dataset.index;
+
+      if (!gameActive || cell.textContent !== "") return;
+
+      cell.textContent = currentPlayer;
+      cell.classList.add(currentPlayer);
+
+      if (checkWinner()) {
+        status.textContent = `Player ${currentPlayer} Wins! 🎉`;
+        gameActive = false;
+        return;
+      }
+
+      if (cells.every(cell => cell.textContent !== "")) {
+        status.textContent = "It's a Draw!";
+        gameActive = false;
+        return;
+      }
+
+      currentPlayer = currentPlayer === "X" ? "O" : "X";
+      status.textContent = `Player ${currentPlayer}'s Turn`;
+    }
+
+    function checkWinner() {
+      const wins = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+      ];
+
+      return wins.some(pattern => {
+        const [a,b,c] = pattern;
+        return cells[a].textContent &&
+               cells[a].textContent === cells[b].textContent &&
+               cells[a].textContent === cells[c].textContent;
+      });
+    }
+
+    function restartGame() {
+      currentPlayer = "X";
+      createBoard();
+    }
+
+    createBoard();
+  </script>
+
+</body>
+</html>

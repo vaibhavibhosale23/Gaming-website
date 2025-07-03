@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameVerse - Play Now!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="GameVerse.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+
+      <div class="progress-reward">
+        <h4 style="color: aliceblue;">🏆 Level Up Reward</h4>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width: 20%;"></div>
+        </div>
+      </div>
+      <nav>
+        <a href="login.html" style="border: 1px solid #033113;
+  color: white;
+  background: linear-gradient(to right, rgb(178, 237, 174), rgb(34, 174, 67));
+  padding: 5px 20px;
+  border-radius: 15px;
+  cursor: pointer;" class="sign-b">Sign in</a>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <div class="sidebar">
+      <div class="profile-section">
+        <img src="gamepad.png" alt="Avatar" class="avatar">
+      </div>
+
+      <a href="#home"><span>🏠</span>Home</a>
+      <a href="#games"><span>👾</span>Fun games</a>
+      <a href="#on-games"><span>🏎️</span>Racing Games</a>
+      <a href="#subway"><span>🧩</span> Subway Surfers</a>
+      <a href="#contact"><span>🏀</span>Feedback</a>
+    </div>
+
+
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <h2 style="font-family: 'Bungee';">Welcome to GameVerse </h2>
+
+        <p>Play Games & have fun!</p>
+        <a href="#games"><button onclick="btn">Explore Games</button></a>
+
+      </div>
+
+
+      <div class="reward-box">
+        <h3>🎁 Daily Reward</h3>
+        <p>Claim 50 bonus coins!</p>
+        <button onclick="claimReward()">Claim now</button>
+      </div>
+    </section>
+
+
+
+    <section id="games">
+      <h1 style="font-family: 'Bungee', cursive; margin-bottom: 40px;">Featured Games</h1>
+      <div
+        style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 60px;border: 2px solid white;background: rgba(0, 0, 0, 0.263);backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);border-radius: 15px;">
+        <div class="game-box"
+          style=" background: url(https://play-lh.googleusercontent.com/S9ZmNx5LYCj7h2IJZb0QqkXAGki6JRaMQ25ycKfrngDkNBA6jk7rM87YcAH1prV_OA);background-size: cover; background-position: center;background-repeat: no-repeat; border-radius: 15px; padding: 20px; width: 300px;height: 400px; text-align: center;display: flex;flex-direction: column;justify-content: flex-end;">
+          <h2
+            style="font-family: 'Bungee', cursive; color: white; -webkit-text-stroke: 1px rgb(0, 0, 0);text-stroke: 1px rgb(0, 0, 0); ">
+            Snake Game
+          </h2>
+          <a href="snake.html"><button class="btn">Play Now</button></a>
+        </div>
+        <div class="game-box"
+          style=" background: url(https://media.istockphoto.com/vectors/tic-tac-toe-game-icon-flat-vector-id1132229113?k=20&m=1132229113&s=612x612&w=0&h=g7-LQ0fUXGorEoyq3A3v1lwaEQ5HNKcXIejDmu6pXso=);background-size: cover; background-position: center;background-repeat: no-repeat; border-radius: 15px; padding: 20px; width: 300px;height: 400px; text-align: center;display: flex;flex-direction: column;justify-content: flex-end;">
+          <h2
+            style="font-family: 'Bungee', cursive; color: white; -webkit-text-stroke: 1px rgb(0, 0, 0);text-stroke: 1px rgb(0, 0, 0); text-shadow: 0 4px 10px rgba(186, 193, 200, 0.6);">
+            Tic Tac Toe
+          </h2>
+          <a href="tic tac toe.html"><button class="btn">Play Now</button></a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section id="on-games" class="on-games">
+      <h1 style="font-family: 'Bungee', cursive; margin-top: 40px;">Racing Games</h1>
+      <div class="grid-container">
+        <a href="https://mr-racer.com/" class="game-link">
+          <div class="box" style="flex-direction: row; justify-content: flex-start; gap: 20px; padding: 20px;">
+            <img
+              src="https://images.crazygames.com/mr-racer---car-racing_16x9/20231227161349/mr-racer---car-racing_16x9-cover?auto=format,compress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+              style="width: 250px; height: 150px;border-radius: 10px;" />
+
+            <div style="text-align: left;">
+              <h3 style="margin-bottom: 10px;">Mr Racer</h3>
+              <p style="font-size: 14px; max-width: 400px;">
+                Mr Racer - Car Racing is a fast-paced driving game where you speed through traffic-packed streets in
+                sleek supercars, taking on challenges to prove you're the ultimate racer.
+              </p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://mr-racer.com/mrracergamefile/stunt-car-extreme/" class="game-link">
+          <div class="box" style="flex-direction: row; justify-content: flex-start; gap: 20px; padding: 20px;">
+            <img
+              src="https://image.winudf.com/v2/image1/Y29tLmh5cGVya2FuaS5zdHVudGNhcmV4dHJlbWVfYmFubmVyXzE2NTUyMjM2NTBfMDk4/banner.jpg?fakeurl=1"
+              style="width: 250px; height: 150px; border-radius: 10px;" />
+
+            <div style="text-align: left;">
+              <h3 style="margin-bottom: 10px;">Stunt Car Extreme</h3>
+              <p style="font-size: 14px; max-width: 400px;">
+                Stunt Car Extreme is a driving game where you navigate a car through different courses with loads of
+                jumps
+                to earn stars.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="https://crimeracer.com/" class="game-link">
+          <div class="box" style="flex-direction: row; justify-content: flex-start; gap: 20px; padding: 20px;">
+            <img src="https://cdn.nichesites.pikoya.com/runnergames_io/images/games/65180/market.jpg"
+              style="width: 250px; height: 150px; border-radius: 10px;" />
+
+            <div style="text-align: left;">
+              <h3 style="margin-bottom: 10px;">Crime Racer</h3>
+              <p style="font-size: 14px; max-width: 400px;">
+                Dive into the criminal underworld with Crime Racer! Speed through city streets, escape the cops, or take
+                them down in high-stakes car chases. It's you versus the law — drive fast, think faster.
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="https://mr-racer.com/mrracergamefile/taxi-driver-master/" class="game-link">
+          <div class="box" style="flex-direction: row; justify-content: flex-start; gap: 20px; padding: 20px;">
+            <img
+              src="https://cdn.cloudflare.steamstatic.com/steam/apps/1159390/ss_659480f9ce6b347af2e3c0201ebcb755441d4fab.1920x1080.jpg?t=1597928569"
+              style="width: 250px; height: 150px; border-radius: 10px;" />
+
+            <div style="text-align: left;">
+              <h3 style="margin-bottom: 10px;">Taxi Driver</h3>
+              <p style="font-size: 14px; max-width: 400px;">
+                Taxi Driver: Master is a role-playing adventure game where you navigate city streets, ferrying
+                passengers
+                to their destinations.
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+
+
+    <section id="subway">
+      <div class="container">
+        <a href="https://subway-surfers.gg/">
+          <div class="box-123 box1"
+            style="background: url(https://run3ds.com/upload/imgs/subway-sufers.png) no-repeat center center/cover;">
+          </div>
+          <a href="https://subway-surfers.gg/fire-flush">
+            <div class="box-123 box2"
+              style="background: url(https://th.bing.com/th/id/OIF.aZbHdF1hpvTIaEpelOdmmg?w=310&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3) no-repeat center center/cover;">
+            </div>
+          </a>
+          <a href="https://subway-surfers.gg/vancouver-2024">
+            <div class="box-123 box3"
+              style="background: url(https://subway-surfers.org/wp-content/uploads/2025/02/Subway-Surfers-Vancouver-2024.jpg) no-repeat center center/cover;">
+            </div>
+          </a>
+          <a href="https://subway-surfers.gg/iceland-2024">
+            <div class="box-123 box4"
+              style="background: url(https://i.ytimg.com/vi/v-g6s_NgfQI/maxresdefault.jpg)no-repeat center center/cover;">
+            </div>
+          </a>
+          <a href="https://subway-surfers.gg/wings-smash">
+            <div class="box-123 box5"
+              style="background: url(https://melonplayground.io/data/image/game/Wing%20Smash.png)no-repeat center center/cover;">
+            </div>
+          </a>
+      </div>
+
+    </section>
+
+
+
+    <section id="about">
+      <div class="game-entry">
+        <div class="game-text">
+          <h1 style="color: rgb(218, 117, 218);">About GameVerse</h1>
+          <p>
+            Welcome to <span class="highlight">GameVerse</span> - your ultimate hub for casual and thrilling web-based
+            games! Whether you're dodging trains in endless runners or mastering driving in racing games, we've got
+            something for every kind of gamer.
+            <br><br>
+            Our mission is to bring fast, fun, and free gaming experiences straight to your browser. No downloads, no
+            hassle - just pure play.
+          </p>
+          <a href="#subway"><button class="btn">Play Now</button></a>
+
+        </div>
+
+        <div class="game-image">
+          <img
+            src="https://th.bing.com/th/id/R.4944fd2a0718f97362f1d9d713961e12?rik=Yjj8y1HBLi51%2bg&riu=http%3a%2f%2fthegameminers.com%2fwp-content%2fuploads%2f2017%2f05%2fSubway-Surfers-2.png&ehk=1qO7Gjmn7J9tG%2fwLYELCB%2ftldIi1bKTkHnn88Vdm7Co%3d&risl=&pid=ImgRaw&r=0"
+            alt="Subway Surfers">
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" class="contact-section">
+      <h2>Contact Us</h2>
+      <div class="contact-content">
+
+        <ul class="contact-info-list">
+          <li class="contact-info">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <p>Shivaji Nagar, Pune</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-phone"></i>
+            <p>(123) 9999999900</p>
+          </li>
+          <li class="contact-info">
+            <i class="fa-solid fa-globe"></i>
+            <a href="GameVerse.html">
+              <p>www.gameverse.com</p>
+            </a>
+          </li>
+        </ul>
+
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button onclick="sent()">Send</button>
+        </form>
+      </div>
+    </section>
+
+
+    <footer>
+      &copy; 2025 GameVerse. All rights reserved.
+    </footer>
+
+    <script src="GameVerse.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+    background-image: url("https://wallpaperaccess.com/full/932088.jpg");
+    color: white;
+    font-family: 'Bungee','Courier New', Courier, monospace;
+  }
+  
+  h1 {
+
+    font-size: 50px;
+    margin-top: 30px;
+    color: white;
+  }
+  
+  #gameCanvas {
+    background: #111;
+    border: 2px solid #0f0;
+    margin-top: 10px;
+  }
+  
+  #score {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  #startBtn {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: linear-gradient(to right, rgb(176, 217, 64), rgb(64, 118, 3));
+    color: #000;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  #startBtn:hover {
+    background: linear-gradient(to right, rgb(4, 255, 33), rgb(11, 94, 4));
+  }
+  
